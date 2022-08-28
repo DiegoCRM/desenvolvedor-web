@@ -128,10 +128,17 @@ header .header-black li a {
     display: block;
 }
 
-header #logotipo {
+header .logotipo {
     position: absolute;
     top: 20px;
+    z-index: 10;
 
+}
+
+#banner h1.efeito {
+    color:red;
+    font-size: 12em;
+    transition: 1s;
 }
 
 #menu {
@@ -152,6 +159,12 @@ header #logotipo {
 
 #menu li.search {
     width: 182px;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(1,-.91,.91,1);
+}
+
+#menu li.search.ativo {
+    width: 300px;
 }
 
 #menu li.search input {

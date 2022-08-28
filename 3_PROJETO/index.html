@@ -51,7 +51,7 @@
                         <li> <a href="#">Schedule </a></li>
                         <li class="search">
                             <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Search">
+                                <input type="search" class="form-control" placeholder="Search" id="input-search">
                                 <span class="input-group-btn">
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
                                             class="fa fa-search"></i></button>
@@ -253,6 +253,20 @@
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".logotipo").on("mouseover",function() {
+               $("#banner h1").addClass("efeito");
+            }).on("mouseout", function(){
+                $("#banner h1").removeClass("efeito");
+            });
+            $("#input-search").on("focus", function(){
+                $("li.search").addClass("ativo");
+            }).on("blur", function(){
+                $("li.search").removClass("ativo")
+            })
+        });
+    </script>
 </body>
 
 </html>
