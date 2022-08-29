@@ -14,7 +14,7 @@ header {
     width: 100%;
     height: 150px;
     background-color: rgba(94, 41, 154, .8);
-    position: absolute;
+    position: relative;
     z-index: 2;
 
 }
@@ -193,13 +193,13 @@ header .logotipo {
 
 #banner {
     width: 100%;
-    height: 937px;
+    height: 800px;
     position: relative;
     background-image: url("../img/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0px -146px;
-    top: -10px;
+    top: -110px;
 }
 
 #banner h1 {
@@ -258,6 +258,14 @@ header .logotipo {
     font-size: 18px;
     font-family: 'OpenSans';
     font-weight: bold;
+}
+
+#news .thumbnails .item-inner {
+    padding: 10px;
+}
+
+#news .thumbnails .item-inner img {
+    width: 100%;
 }
 
 #estatisticas {
@@ -453,4 +461,8 @@ footer .list-socials a {
 footer .list-socials i {
     font-size: 16px;
     margin: 7px 7px;
+}
+
+video{
+    width: 60%;
 }
