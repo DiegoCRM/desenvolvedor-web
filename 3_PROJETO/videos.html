@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orlando City</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="lib/plyr/dist/plyr.css">
+    <link rel="stylesheet" href="lib/OwlCarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/OwlCarousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/oralndo.css">
 </head>
@@ -89,7 +90,9 @@
                 </div>
 
                 <div class="row">
-                    <video src="mp4/highlights.mp4" controls poster="img/highlights.jpg"></video>
+                    <div class="player">
+                        <video src="mp4/highlights.mp4" controls poster="img/highlights.jpg"></video>
+                    </div>
                     <input type="range" min="0" max="1" step="0.01" id="volume" value="1">
 
                     <button type="button" id="btn-play-pause" class="btn btn-success">PLAY</button>
@@ -253,9 +256,24 @@
 
 
     <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="lib/plyr/dist/plyr.js"></script>
+    <script src="lib/OwlCarousel/dist/owl.carousel.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/efeitos.js"></script>
+    <script>
+        (function (d, p) {
+            var a = new XMLHttpRequest(),
+                b = d.body;
+            a.open("GET", p, true);
+            a.send();
+            a.onload = function () {
+                var c = d.createElement("div");
+                c.style.display = "none";
+                c.innerHTML = a.responseText;
+                b.insertBefore(c, b.childNodes[0]);
+            }
+        })(document, "lib/plyr/dist/sprite.svg");
+    </script>
     <script>
         $(function () {
             $(".thumbnails .items").on("click", function () {
@@ -268,19 +286,20 @@
                 $("video")[0].volume = parseFloat($(this).val())
             })
             $("#btn-play-pause").on("click", function () {
-
+                var video = $("video")[0];
 
                 if ($(this).hasClass("btn-success")) {
-
-                    $(this).text("STOP");
-
+                    $(this).text(" STOP");
+                    video.play();
 
                 } else {
                     $(this).text("PLAY");
+                    video.pause();
                 }
+
                 $(this).toggleClass("btn-success btn-danger");
             })
-
+            plyr.setup();// Disparando player PLYR
         })
     </script>
 </body>
