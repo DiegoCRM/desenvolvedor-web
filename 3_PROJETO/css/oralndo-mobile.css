@@ -1,10 +1,17 @@
 /* Tamanho padrão para tablets */
 @media only screen and (max-width: 768px){
-    .header-black ul {
+    .header-black ul, #menu {
         display: none;
     }
 }
 
 @media only screen and (max-width: 480px){
-    
+    .header-black ul, #menu {
+        display: none;
+    }
+
+    #logotipo {
+        left: 30%;
+    }
+     
 }
