@@ -6,6 +6,10 @@
 }
 
 @media only screen and (max-width: 480px){
+    body {
+        width: 122%;
+    }
+
     .header-black ul, #menu {
         display: none;
     }
@@ -13,5 +17,83 @@
     #logotipo {
         left: 30%;
     }
+    #btn-bars, #btn-search {
+        color: #fff;
+        font-size: 22px;
+        position: absolute;
+        top: 4px;
+        background: none;
+        border: none;
+        display: block;
+    }
+
+    #btn-bars {
+        left: 0;
+        
+    }
+
+    #btn-search {
+        right: 0;
+    }
+
+    #banner {
+        height: 317px;
+       background-size: contain;
+       background-position: 0;
+       text-align: center;
+       top: -162px;
+    }
+
+    #banner h1 {
+        top: 180px;
+        font-size: 48px;
+        margin-left: 0;
+    }
+
+    #banner h1 small {
+        font-size: 22px;
+    }
+
+    #news {
+        top: -185px;
+    }
+
+    #news h2 {
+        font-size: 32px;
+    }
+
+    #news hr {
+        border-width: 4px;
+    }
+
+    .owl-carousel .owl-wrapper-outer {
+        margin-left: 15px;
+    }
+
+    .thumbnails {
+        text-align: center;
+    }
+
+    #news .thumbnails .item-inner img {
+        width: 80%;
+        
+    }
+    
+    #btn-news-next, #btn-news-prev {
+        color: #5e2699;
+        background: none;
+        border: none;
+        font-size: 48px;
+        display: block;
+        position: absolute;
+        top: 130px;
+        z-index: 10;
+        outline: 0;
+    }
+
+    #btn-news-next {
+        right: 10px;
+    }
+
      
 }

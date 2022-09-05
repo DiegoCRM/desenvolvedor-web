@@ -10,6 +10,10 @@
     font-size: 1em;
 }
 
+body {
+    width: 100%;
+}
+
 header {
     width: 100%;
     height: 150px;
@@ -128,7 +132,7 @@ header .header-black li a {
     display: block;
 }
 
-header .logotipo {
+header #logotipo {
     position: absolute;
     top: 20px;
     z-index: 10;
@@ -377,7 +381,7 @@ footer .text-roxo {
 
 }
 
-footer .logotipo {
+footer #logotipo {
     margin: 28px;
 }
 
@@ -465,4 +469,9 @@ footer .list-socials i {
 
 video{
     width: 60%;
+}
+
+
+#btn-bars, #btn-search, #btn-news-next, #btn-news-prev {
+    display: none;
 }

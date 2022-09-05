@@ -16,17 +16,46 @@ $(document).ready(function () {
         navText: ["Anterior", "Próximo"],
         responsive: {
             0: {
-                item: 1
+                items: 1
             },
             480: {
-                item: 3
+                items: 2
             },
             768: {
-                item: 4
+                items: 3
             },
             1200: {
-                item: 6
+                items: 4
             }
         }
-    })
+    });
+
+    /* var owl = $(".thumbnails").data('owlCarousel');
+
+    $('#btn-news-prev').on("click", function () {
+        owl.prev();
+    });
+
+    $('#btn-news-next').on("click", function () {
+        owl.next();
+    }); */
+
+    var owl = $(".thumbnails").data('owlCarousel');
+
+  	$('#btn-news-prev').on("click", function(){
+
+  		owl.prev();
+
+  	});
+
+  	$('#btn-news-next').on("click", function(){
+
+  		owl.next();
+
+  	});
+
 });
+
+
+
+
