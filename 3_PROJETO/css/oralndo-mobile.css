@@ -1,13 +1,13 @@
 /* Tamanho padrão para tablets */
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     .header-black ul, #menu {
         display: none;
     }
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px) {
     body {
-        width: 122%;
+        width: 100%;
     }
 
     .header-black ul, #menu {
@@ -15,8 +15,9 @@
     }
 
     #logotipo {
-        left: 30%;
+        left: 50%;
     }
+
     #btn-bars, #btn-search {
         color: #fff;
         font-size: 22px;
@@ -29,7 +30,7 @@
 
     #btn-bars {
         left: 0;
-        
+
     }
 
     #btn-search {
@@ -38,10 +39,10 @@
 
     #banner {
         height: 317px;
-       background-size: contain;
-       background-position: 0;
-       text-align: center;
-       top: -162px;
+        background-size: contain;
+        background-position: 0;
+        text-align: center;
+        top: -162px;
     }
 
     #banner h1 {
@@ -75,10 +76,11 @@
     }
 
     #news .thumbnails .item-inner img {
-        width: 80%;
-        
+        width: 70%;
+        margin: 0 45px;
+
     }
-    
+
     #btn-news-next, #btn-news-prev {
         color: #5e2699;
         background: none;
@@ -87,7 +89,7 @@
         display: block;
         position: absolute;
         top: 130px;
-        z-index: 10;
+        z-index: 2;
         outline: 0;
     }
 
@@ -95,5 +97,126 @@
         right: 10px;
     }
 
-     
+    #estatisticas {
+        height: inherit;
+    }
+
+    #estatisticas p {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    #call-to-action {
+        margin-top: 69px;
+    }
+
+    #call-to-action hr {
+        border-width: 4px;
+    }
+
+    #call-to-action p {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #call-to-action h2 {
+        font-size: 32px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #call-to-action .btn {
+        min-width: 138px;
+    }
+
+    #call-to-action .btn-roxo {
+        float: left;
+    }
+
+    #call-to-action .btn-amarelo {
+        float: right;
+    }
+
+    #call-to-action .col-xs-6 {
+        padding: 0;
+    }
+
+    footer {
+        margin-top: 60px;
+    }
+
+    #copyright-mobile p {
+        font-size: 10px;
+        line-height: 0;
+    }
+
+    #copyright-mobile p .float-start {
+        float: inherit !important;
+    }
+
+    footer .row p {
+
+        text-align: center;
+        line-height: 20PX;
+    }
+
+    footer .row p:first-child {
+        margin-top: 10px;
+    }
+
+    footer .text-roxo {
+        margin-right: 10px;
+    }
+
+    footer .row {
+        margin: 0;
+    }
+
+    footer .list-socials {
+        position: absolute;
+        width: 100%;
+        left: 0;
+       
+    }
+
+    footer .list-socials a {
+        width: 45px;
+        height: 48px;
+        font-size: 16px;
+        border-radius: 50%;
+    }
+
+    footer .list-socials i {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    footer .row-cinza-claro {
+        height: 157px;
+    }
+
+    footer .btn-footer {
+        width: 100%;
+        background-color: #11171d;
+        height: 44px;
+        line-height: 35px;
+    }
+
+    footer .col-xs-6 {
+        padding: 0;
+        padding-right: 5px;
+    }
+
+    footer .col-xs-6:last-child {
+        padding-right: 0;
+        padding-left: 5px;
+    }
+
+    footer .d-sm-none {
+        margin-top: -10px;
+
+    }
+
 }
