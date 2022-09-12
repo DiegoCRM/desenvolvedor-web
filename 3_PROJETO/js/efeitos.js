@@ -61,6 +61,11 @@ $(document).ready(function () {
    
    
       });
+
+      $("#btn-search").on("click", function(){
+        $("header").toggleClass("open-search");
+        $("input-search-mobile").focus();
+      })
   
 
 });

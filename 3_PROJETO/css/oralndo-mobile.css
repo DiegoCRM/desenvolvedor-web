@@ -14,9 +14,11 @@
         display: none;
     }
 
-    #logotipo {
+    header #logotipo {
         left: 50%;
         z-index: 6;
+        transition: 1s;
+        
     }
 
     #btn-bars, #btn-search {
@@ -261,6 +263,7 @@
 		top: 50px;
 		height: 76px;
 		left: calc(40% - 33px);
+        transform: rotate(360deg);
 	}
 
     header.open-menu #menu-mobile ul {
@@ -285,10 +288,42 @@
         font-family: 'OpenSans';
         font-weight: bold;
         font-size: 16px;
-        padding: 10px;
+        padding: 18px;
         z-index: 7;
+        display: block;
+    }
+    header.open-menu .bar-close {
+        position: absolute;
+        bottom: 40px;
+        background-color: #633492;
+        height: 40px;
+        width: 100%;
     }
 
+    header.open-menu .bar-close .btn-close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 22px;
+    }
 
+    header.open-search #input-search-mobile {
+        top: 0;
+        
+    }
+    header #input-search-mobile {
+        transition: 1s;
+        top: -40px;
+        position: fixed;
+        width: 70%;
+        left: 15%;
+        border: none;
+        background-color: #000;
+        height: 40px;
+        color: #fff;
+        z-index: 11;
+        outline: 0;
+    }
+    
 
 }

@@ -15,19 +15,21 @@
 </head>
 
 <body>
-    <header class="open-menu">
+    <header >
         <div id="menu-mobile-mask" class="d-block d-sm-none"> 
-            <nav id="menu-mobile" class="d-block d-sm-none">
+            <div id="menu-mobile" >
 
-                <ul class="list-unstyled">
+                <ul class="list-unstyled" >
                     <li> <a href="index.html">Home</a></li>
                     <li> <a href="videos.html">Vídeos</a></li>
                     <li> <a href="#">Tickets</a></li>
                     <li> <a href="#">News </a></li>
                     <li> <a href="#">Schedule </a></li>
                 </ul>
-
-            </nav>
+                <div class="bar-close">
+                    <button type="button" class="btn btn-close"><i class="fa fa-close"></i></button>
+                </div>
+            </div>
 
         </div>
 
@@ -38,6 +40,8 @@
 
         <div class="header-black">
             <div class="container">
+
+                <input type="search" id="input-search-mobile" class="d-block d-sm-none" placeholder="Search">
 
                 <button id="btn-bars" type="button"><i class="fa fa-bars"></i></button>
                 <button id="btn-search" type="button"><i class="fa fa-search"></i></button>
