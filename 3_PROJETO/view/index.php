@@ -116,7 +116,7 @@
 
                 <div class="row row-max-400">
                     <div class="col-sm-6">
-                        <a href="#" class="btn btn-roxo">Shop</a>
+                        <a href="shopp.php" class="btn btn-roxo">Shop</a>
                     </div>
 
                     <div class="col-sm-6">

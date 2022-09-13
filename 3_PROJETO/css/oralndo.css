@@ -140,7 +140,7 @@ header #logotipo {
 }
 
 #banner h1.efeito {
-    color:red;
+    color: red;
     font-size: 12em;
     transition: 1s;
 }
@@ -164,7 +164,7 @@ header #logotipo {
 #menu li.search {
     width: 182px;
     transition-duration: 1s;
-    transition-timing-function: cubic-bezier(1,-.91,.91,1);
+    transition-timing-function: cubic-bezier(1, -.91, .91, 1);
 }
 
 #menu li.search.ativo {
@@ -328,7 +328,7 @@ header #logotipo {
     color: #fff;
     background-color: #5e299a;
     border-color: #5e299a;
-    
+
 }
 
 #call-to-action .btn-amarelo {
@@ -343,7 +343,7 @@ header #logotipo {
 }
 
 footer {
-    margin:45px 0px 9px 0px
+    margin: 45px 0px 9px 0px
 }
 
 footer .row {
@@ -437,7 +437,7 @@ footer .col-get-in-touch address span {
 footer .col-get-in-touch i {
     color: #9b9b9b;
     font-size: 20px;
-    
+
 }
 
 footer .col-get-in-touch a {
@@ -445,10 +445,11 @@ footer .col-get-in-touch a {
     color: #666;
 }
 
-footer .col-get-in-touch address i{
+footer .col-get-in-touch address i {
     position: relative;
     top: -08px;
 }
+
 footer .list-socials li {
     display: inline-block;
 }
@@ -468,7 +469,7 @@ footer .list-socials i {
     margin: 7px 7px;
 }
 
-video{
+video {
     width: 60%;
 }
 
@@ -481,3 +482,79 @@ video{
 #page-up {
     display: none !important;
 }
+
+/* Shopp */
+
+.text-arial-cinza {
+    font-family: Arial;
+    font-size: 20px;
+    color: #666;
+}
+
+.text-roxo {
+    color: #6e3ea4;
+}
+
+#destaque-produtos-container {
+    position: relative;
+}
+
+#destaque-produtos {
+    margin: 30px auto;
+}
+
+#destaque-produtos .col-imagem {
+    text-align: center;
+}
+
+#destaque-produtos .col-descricao h2 {
+    font-family: Arial;
+    font-size: 20px;
+    color: #666;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+
+#destaque-produtos .col-descricao .box-valor {
+    width: 100%;
+    position: relative;
+
+}
+
+#destaque-produtos .col-descricao .box-valor .text-reais {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 13px;
+    left: 28px;
+}
+
+#destaque-produtos .col-descricao .box-valor .text-valor {
+    font-size: 50px;
+    position: absolute;
+    top: -17px;
+    left: 54px;
+}
+
+#destaque-produtos .col-descricao .box-valor .text-valor-centavos {
+    font-size: 30px;
+    position: absolute;
+    top: -10px;
+    left: 182px;
+}
+
+
+#destaque-produtos .col-descricao .box-valor .btn-comprar {
+    font-size: 26px;
+    padding: 10px 0;
+}
+
+#destaque-produtos .col-descricao .box-valor .btn-comprar .fa {
+    font-size: 34px;
+}
+
+#destaque-produtos .col-descricao .text-parcelas {
+    margin-top: 20px;
+}
+
