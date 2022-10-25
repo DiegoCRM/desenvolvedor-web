@@ -8,7 +8,7 @@ $app = new \Slim\Slim();
 
 // GET route
 $app->get(
-    '/',
+    '/index',
     function () {
 
         require_once("view/index.php");
@@ -35,3 +35,5 @@ $app->get(
 );
 
 $app->run();
+
+?>

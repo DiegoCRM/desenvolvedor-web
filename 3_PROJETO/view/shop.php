@@ -1,13 +1,13 @@
-<?php include_once("header.php");?>
+<?php include_once("header.php"); ?>
 
 <section>
-	
+
 	<div class="container" id="destaque-produtos-container">
 
 		<div id="destaque-produtos">
-			
+
 			<div class="item">
-				
+
 				<div class="col-sm-6 col-imagem">
 					<img src="img/produtos/moto-x.png" alt="Nome do Produto">
 				</div>
@@ -20,7 +20,7 @@
 						<div class="text-valor text-roxo">1.259</div>
 						<div class="text-valor-centavos text-roxo">,10</div>
 						<div class="text-parcelas text-arial-cinza">ou em até 8x de R$ 174,88</div>
-						<div class="text-total text-arial-cinza">total a prazo R$ 1.399,00</div>	
+						<div class="text-total text-arial-cinza">total a prazo R$ 1.399,00</div>
 					</div>
 					<a href="#" class="btn btn-comprar text-roxo"><i class="fa fa-shopping-cart"></i> compre agora</a>
 				</div>
@@ -28,7 +28,7 @@
 			</div>
 
 			<div class="item">
-				
+
 				<div class="col-sm-6 col-imagem">
 					<img src="img/produtos/moto-x.png" alt="Nome do Produto">
 				</div>
@@ -41,7 +41,7 @@
 						<div class="text-valor text-roxo">1.259</div>
 						<div class="text-valor-centavos text-roxo">,10</div>
 						<div class="text-parcelas text-arial-cinza">ou em até 8x de R$ 174,88</div>
-						<div class="text-total text-arial-cinza">total a prazo R$ 1.399,00</div>	
+						<div class="text-total text-arial-cinza">total a prazo R$ 1.399,00</div>
 					</div>
 					<a href="#" class="btn btn-comprar text-roxo"><i class="fa fa-shopping-cart"></i> compre agora</a>
 				</div>
@@ -56,17 +56,17 @@
 	</div>
 
 	<div id="promocoes" class="container">
-		
+
 		<div class="row">
 			<div class="col-md-2">
-				
+
 				<div class="box-promocao box-1">
 					<p>escolha por desconto</p>
 				</div>
 
 			</div>
 			<div class="col-md-10">
-				
+
 				<div class="row-fluid">
 					<div class="col-md-3">
 						<div class="box-promocao">
@@ -107,34 +107,62 @@
 
 	</div>
 
+	<div id="mais-buscados">
+		<div class="row text-center title-default-roxo">
+			<h2>os mais buscados</h2>
+			<hr>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box-produto-info">
+					<a href="produto">
+						<img src="img/produtos/panelas.png" alt="Panelas" class="produto-img">
+						<h3>Conjunto de Panelas Tramontina Versalher Alumínio Antiaderente 5</h3>
+						<div class="estrelas"></div>
+						<div class="text-qtd-reviews text-arial-cinza">(300)</div>
+						<div class="text-valor text-roxo">109,90</div>
+						<div class="text-parcelado text-arial-cinza">10x de R$10,99 sem juros</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </section>
 
-<?php include_once("footer.php");?>
+<?php include_once("footer.php"); ?>
 
 <script>
-$(function(){
+	$(function() {
 
-	$("#destaque-produtos").owlCarousel({
- 
-      autoPlay: 5000,
-      items : 1,
-      singleItem: true
- 
-  	});
+		$("#destaque-produtos").owlCarousel({
 
-  	var owlDestaque = $("#destaque-produtos").data('owlCarousel');
+			autoPlay: 5000,
+			items: 1,
+			singleItem: true
 
-  	$('#btn-destaque-prev').on("click", function(){
+		});
 
-  		owlDestaque.prev();
+		var owlDestaque = $("#destaque-produtos").data('owlCarousel');
 
-  	});
+		$('#btn-destaque-prev').on("click", function() {
 
-  	$('#btn-destaque-next').on("click", function(){
+			owlDestaque.prev();
 
-  		owlDestaque.next();
+		});
 
-  	});
+		$('#btn-destaque-next').on("click", function() {
 
-});
+			owlDestaque.next();
+
+		});
+
+		$('.estrelas').raty(
+			starHalf: 'lib/raty/lib/images/star-half.png',
+			starOff: 'lib/raty/lib/images/star-off.png',
+			starOn: 'lib/raty/lib/images/star-on.png',
+
+		);
+
+	});
 </script>
