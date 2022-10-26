@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="shop">
 	<head>
 
 		<meta charset="utf-8">
@@ -11,7 +11,8 @@
 		<link rel="stylesheet" href="lib/raty/lib/jquery.raty.css">
 		<link rel="stylesheet" href="css/orlando.css">
 		<link rel="stylesheet" href="css/orlando-mobile.css">
-		
+
+		<script src="lib/angularjs/angular.min.js"></script>
 
 	</head>
 	<body>
@@ -23,7 +24,7 @@
 			<div id="menu-mobile" class="visible-xs">
 				
 				<ul class="list-unstyled">
-					<li><a href="videos.php">Videos</a></li>
+					<li><a href="videos.html">Videos</a></li>
 					<li><a href="#">Tickets</a></li>
 					<li><a href="#">News</a></li>
 					<li><a href="#">Schedule</a></li>
@@ -83,8 +84,8 @@
 					
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="index">Home</a></li>
-							<li><a href="videos">Videos</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="videos.html">Videos</a></li>
 							<li><a href="#">Tickets</a></li>
 							<li><a href="#">News</a></li>
 							<li><a href="#">Schedule</a></li>
