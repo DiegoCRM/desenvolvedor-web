@@ -1,18 +1,18 @@
-<?php include_once("header.php");?>
+<?php include_once("header.php"); ?>
 
-<section  ng-controller="cart-controller">
-	
+<section ng-controller="cart-controller">
+
 	<div class="container">
 
 		<div class="row text-center title-default-roxo" style="margin:40px auto;">
 			<h2>carrinho de compras</h2>
-			<hr>	
+			<hr>
 		</div>
 
 		<table id="cart-products" class="table table-bordered">
 			<thead>
 				<tr>
-					<th colspan="2" class="text-center">Produto(s)</th>
+					<th colspan="2">Produto(s)</th>
 					<th class="text-center">Quantidade</th>
 					<th class="text-center">Entrega</th>
 					<th class="text-center">Valor Unitário</th>
@@ -26,22 +26,22 @@
 					<td>{{produto.nome_prod_long}}</td>
 					<td class="col-xs-2">
 						<div class="input-group">
-					      <span class="input-group-btn">
-					        <button class="btn text-roxo" ng-click="addQtd(produto)" type="button"><i class="fa fa-chevron-down"></i></button>
-					      </span>
-					      <input type="text" class="form-control" ng-model="produto.qtd">
-					      <span class="input-group-btn">
-					        <button class="btn text-roxo" ng-click="removeQtd(produto)" type="button"><i class="fa fa-chevron-up"></i></button>
-					      </span>
-					    </div>
+							<span class="input-group-btn">
+								<button class="btn text-roxo" ng-click="removeAll(produto)" type="button"><i class="fa fa-chevron-down"></i></button>
+							</span>
+							<input type="text" class="form-control" ng-model="produto.qtd_car">
+							<span class="input-group-btn">
+								<button class="btn text-roxo" ng-click="removeQtd(produto)" type="button"><i class="fa fa-chevron-up"></i></button>
+							</span>
+						</div>
 					</td>
 					<td class="text-center col-xs-2">
-						<p>Entrega para o<br/>CEP: {{carrinho.cep}}</p>
+						<p>Entrega para o<br />CEP: {{carrinho.cep}}</p>
 						<strong class="text-roxo">{{produto.prazo}}</strong>
 					</td>
 					<td class="text-center">R$ {{produto.preco}}</td>
 					<td class="text-center">R$ {{produto.total}}</td>
-					<td class="text-center"><button class="btn text-roxo" type="button"><i class="fa fa-close"></i></button></td>
+					<td class="text-center"><button ng-click="addQtd(produto)" class="btn text-roxo" type="button"><i class="fa fa-close"></i></button></td>
 				</tr>
 			</tbody>
 		</table>
@@ -51,11 +51,11 @@
 				<div class="box-outline-grey">
 					<p style="margin:28px auto;">Simule o prazo de entrega e o frete para seu CEP abaixo:</p>
 					<div class="input-group col-xs-4" style="margin:0 auto;">
-				      <input type="text" class="form-control">
-				      <span class="input-group-btn">
-				      	<button class="btn btn-default" type="button">Calcular Frete</button>
-				      </span>
-				    </div>
+						<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">Calcular Frete</button>
+						</span>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-4">
@@ -84,78 +84,93 @@
 
 </section>
 
-<?php include_once("footer.php");?>
+<?php include_once("footer.php"); ?>
 
 <script>
-angular.module("shop", []).controller("cart-controller", function($scope, $http){
+	angular.module("shop", []).controller("cart-controller", function($scope, $http) {
 
-	var carregarCarrinho = function(){
+		var carregarCarrinho = function() {
 
-		$http({
-			method:'GET',
-			url:'carrinho-dados'
-		}).then(function(response){
+			$http({
+				method: 'GET',
+				url: 'carrinho-dados'
+			}).then(function(response) {
 
-			console.log(response);
+				$scope.carrinho = {
+					cep: response.data.cep_car,
+					subtotal: response.data.subtotal_car,
+					frete: response.data.frete_car,
+					total: response.data.total_car
+				};
 
-		}, function(response){
+				$scope.produtos = response.data.produtos;
 
-			console.error(response);
+			}, function(response) {
 
-		});
+				console.error(response);
 
-	};
+			});
 
-	$scope.carrinho = {
-		cep:'01310-100',
-		subtotal:'1.110,00',
-		frete:'0,00',
-		total:'1.110,00'
-	};
+		};
 
-	$scope.produtos = [{
-		nome_prod_long:'Smartphone Motorola Moto X Play Dual',
-		preco:'1.500,99',
-		total:'1.500,99',
-		qtd:1,
-		foto_principal:'iphone.jpg',
-		prazo:'11 dias úteis',
-		id_prod:1
-	},{
-		nome_prod_long:'Smartphone Motorola Moto X Play Dual',
-		preco:'1.500,99',
-		total:'1.500,99',
-		qtd:1,
-		foto_principal:'iphone.jpg',
-		prazo:'10 dias úteis',
-		id_prod:2
-	}];
+		$scope.addQtd = function(_produto) {
 
-	$scope.addQtd = function(_produto){
+			$http({
+				method: 'POST',
+				url: 'carrinho-produto',
+				data: JSON.stringify({
+					id_prod: _produto.id_prod
+				})
+			}).then(function(response) {
 
-		$http({
-			method:'POST',
-			url:'carrinho-produto',
-			data:JSON.stringify({
-				id_prod:_produto.id_prod
-			})
-		}).then(function(response){
+				carregarCarrinho();
 
-			console.log(response);
-
-		}, function(){
+			}, function() {
 
 
 
-		});
+			});
 
-	};
+		};
 
-	$scope.removeQtd = function(_produto){
+		$scope.removeQtd = function(_produto) {
+
+			$http({
+				method: 'DELETE',
+				url: 'carrinho-produto',
+				data: JSON.stringify({
+					id_prod: _produto.id_prod
+				})
+			}).then(function(response) {
+
+				carregarCarrinho();
+
+			}, function() {
 
 
 
-	};
+			});
 
-});
+		};
+
+		$scope.removeAll = function(_produto) {
+
+			$http({
+				method: 'DELETE',
+				url: 'carrinhoRemoveAll-' + _produto.id_prod
+			}).then(function(response) {
+
+				carregarCarrinho();
+
+			}, function() {
+
+
+
+			});
+
+		};
+
+		carregarCarrinho();
+
+	});
 </script>
